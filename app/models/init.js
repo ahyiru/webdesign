@@ -1,0 +1,219 @@
+import {
+  Layout,Tools,Color,Frame,
+
+  ButtonDemo,RowDemo,FormDemo,InputDemo,PanelDemo,ItemDemo,
+
+  IconDemo,EchartsDemo,TableDemo,TabsDemo,ListDemo,UlDemo,ProgressDemo,CodeDemo,TreeDemo,PaginationDemo,
+
+  TextareaDemo,RadioDemo,CheckboxDemo,SelectDemo,AutocompleteDemo,MuiltselectDemo,SwitchDemo,BadgeDemo,ModalDemo,DateDemo,
+} from '../api';
+
+import Home from '../home';
+import Brand from '../brand';
+import Nav from '../nav';
+import Router from '../router';
+const drop='<div><h4>中</h4><h4>英</h4><h4>日</h4></div>';
+const leftNav=[{
+  // name:'theme',
+  icon:'cog',
+  animate:'up',
+  drop:null,
+}];
+const rightNav=[{
+  name:'清缓',
+  icon:'trash-o',
+},{
+  name:'API',
+  icon:'book',
+  href:'#/api',
+},{
+  // name:'language',
+  icon:'html5',
+  animate:'down',
+  msg:'',
+  drop:drop,
+},{
+  // name:'profile',
+  // img:require('../styles/images/usr.jpg'),
+  icon:'user',
+  animate:'right',
+  msg:'4',
+  drop:null,
+}];
+const routers=[{
+  url:'/',
+  component:Frame,
+  title:'主页',
+  leftIcon:'home',
+},{
+  url:'/router',
+  component:Router,
+  title:'路由',
+  leftIcon:'html5',
+},{
+  url:'/brand',
+  component:Brand,
+  title:'Brand',
+  leftIcon:'apple',
+},{
+  url:'/nav',
+  component:Nav,
+  title:'Nav',
+  leftIcon:'qq',
+},{
+  url:'javascript:;',
+  title:'Api',
+  leftIcon:'book',
+  subMenu:[{
+    url:'/api/layout',
+    component:Layout,
+    title:'layout布局',
+  },{
+    url:'/api/frame',
+    component:Frame,
+    title:'框架配置',
+  },{
+    url:'/api/color',
+    component:Color,
+    title:'color颜色',
+  },{
+    url:'/api/tools',
+    component:Tools,
+    title:'工具',
+  },{
+    url:'/api/button',
+    component:ButtonDemo,
+    title:'button按钮',
+  },{
+    url:'/api/row',
+    component:RowDemo,
+    title:'row栅格',
+  },{
+    url:'/api/form',
+    component:FormDemo,
+    title:'表单',
+  },{
+    url:'/api/input',
+    component:InputDemo,
+    title:'input输入框',
+  },{
+    url:'/api/panel',
+    component:PanelDemo,
+    title:'面板',
+  },{
+    url:'/api/items',
+    component:ItemDemo,
+    title:'items列表',
+  },{
+    url:'/api/icon',
+    component:IconDemo,
+    title:'图标',
+  },{
+    url:'/api/echarts',
+    component:EchartsDemo,
+    title:'图表',
+  },{
+    url:'/api/table',
+    component:TableDemo,
+    title:'表格',
+  },{
+    url:'/api/tabs',
+    component:TabsDemo,
+    title:'tabs页签',
+  },{
+    url:'/api/list',
+    component:ListDemo,
+    title:'list列表',
+  },{
+    url:'/api/ul',
+    component:UlDemo,
+    title:'ul列表',
+  },{
+    url:'/api/progress',
+    component:ProgressDemo,
+    title:'进度条',
+  },{
+    url:'/api/code',
+    component:CodeDemo,
+    title:'代码文本',
+  },{
+    url:'/api/tree',
+    component:TreeDemo,
+    title:'树',
+  },{
+    url:'/api/pagination',
+    component:PaginationDemo,
+    title:'分页',
+  },{
+    url:'/api/textarea',
+    component:TextareaDemo,
+    title:'文本区域',
+  },{
+    url:'/api/radio',
+    component:RadioDemo,
+    title:'单选',
+  },{
+    url:'/api/checkbox',
+    component:CheckboxDemo,
+    title:'多选',
+  },{
+    url:'/api/select',
+    component:SelectDemo,
+    title:'下拉选择',
+  },{
+    url:'/api/autocomplete',
+    component:AutocompleteDemo,
+    title:'自动补齐',
+  },{
+    url:'/api/muiltselect',
+    component:MuiltselectDemo,
+    title:'下拉多选',
+  },{
+    url:'/api/switch',
+    component:SwitchDemo,
+    title:'切换',
+  },{
+    url:'/api/badge',
+    component:BadgeDemo,
+    title:'标记',
+  },{
+    url:'/api/modal',
+    component:ModalDemo,
+    title:'模态窗',
+  },{
+    url:'/api/date',
+    component:DateDemo,
+    title:'日期',
+  }],
+}];
+
+export const app={
+  brand:{
+    title:'Phoenix',
+    subtitle:'UI',
+    logo:null
+  },
+  navbar:{
+    leftNav:leftNav,
+    rightNav:rightNav,
+    click:(v)=>{console.log(v);},
+    collapse:()=>{console.log('collapse');}
+  },
+  sidebar:{
+    projectList:null,
+    showSidebarTitle:false,
+    userInfo:null
+  },
+  rightbar:'<h2>111</h2>',
+  main:{
+    showPagehead:false,
+    showPagetitle:false
+  },
+  footer:'<p>版权所有 &copy; 2017-2020 Phoenix 团队</p>',
+  routers:routers,
+  routeAnimate:'scale',
+  scroll:false,
+  sidebarScroll:true,
+  browserRouter:false,
+  horizontal:false
+};
